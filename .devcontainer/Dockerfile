@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Sao_Paulo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# Instalar ROS 2 Humble manualmente
+# Instalar ROS 2 Humble
 RUN apt-get update && apt-get install -y curl gnupg2 lsb-release && \
     curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | apt-key add - && \
     echo "deb http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2.list && \
@@ -13,13 +13,8 @@ RUN apt-get update && apt-get install -y curl gnupg2 lsb-release && \
     python3-colcon-common-extensions \
     ros-humble-xacro \
     ros-humble-urdf-tutorial \
-    git \
-    nano \
+    git nano \
     && rm -rf /var/lib/apt/lists/*
-
-ENV LANG=C.UTF-8
-ENV LC_ALL=C.UTF-8
-ENV ROS_DISTRO=humble
 
 SHELL ["/bin/bash", "-c"]
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
