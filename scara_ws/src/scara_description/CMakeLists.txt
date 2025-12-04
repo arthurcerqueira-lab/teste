@@ -24,3 +24,8 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+install(
+  DIRECTORY urdf meshes
+  DESTINATION share/${PROJECT_NAME}
+)
