@@ -1,11 +1,6 @@
 {
   "name": "ROS2 SCARA Workspace",
   "dockerFile": "Dockerfile",
-  "runArgs": [
-    "--net=host",
-    "--env=DISPLAY",
-    "--volume=/tmp/.X11-unix:/tmp/.X11-unix"
-  ],
   "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ros-humble-rviz2",
   "customizations": {
     "vscode": {
