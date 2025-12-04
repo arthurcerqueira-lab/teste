@@ -1,7 +1,7 @@
 {
   "name": "ROS2 SCARA Workspace",
   "dockerFile": "Dockerfile",
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y ros-humble-rviz2",
+ "postCreateCommand": "apt-get update && apt-get install -y ros-humble-rviz2",
   "customizations": {
     "vscode": {
       "extensions": [
